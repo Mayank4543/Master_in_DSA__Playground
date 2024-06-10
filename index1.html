@@ -1,0 +1,71 @@
+<script>
+// var es=class {
+//     cconstructor(id, name) {
+//       this.id = id;
+//       this.name = name;
+//     }
+//     detail() {
+//       document.write(this.id + "" + this.name + "");
+//     }
+//   }
+//  document.writeln(es.name)
+// empl={id:101,name:"MAyank",salary:10000}
+// document.write(empl.id,empl.name,empl.salary)
+// var empl=new Object();
+// empl.id=101
+// empl.name="Mayank"
+// empl.clas="BCA 4th sem"
+// document.write(empl.id+" "+empl.name+"  "+empl.clas)
+// function employee(firstname,lastname){
+// this.firstname=firstname
+// this.lastname=lastname
+// }
+// employee.prototype.myfullname=function(){
+//     return this.firstname+" "+this.lastname
+// }
+// var e1=new employee("Mayank","Rathore")
+// document.write(e1.myfullname()+"<br>")
+// class StaticMethodCall {
+//   static staticProperty = "static property";
+//   static staticMethod() {
+//     return `Static method and ${this.staticProperty} has been called`;
+//   }
+//   static anotherStaticMethod() {
+//     return `${this.staticMethod()} from another static method`;
+//   }
+// }
+// class staticmethodcall1{
+//     static staticProperty="static property"
+//     static method(){
+//         return ` static method are the method that are declare using static keyword ${this.staticProperty} has been clalled`
+//     }
+//     static anothermeth(){
+//         return `${this.method()} statict method can be called within a static using this keyword`
+//     }
+
+// }
+// staticmethodcall1.method()
+// staticmethodcall1.anothermeth()
+class student{
+    constructor(){
+        var name;
+        var marks;
+    }
+    get name(){
+        return this.name;
+    }
+    set name(name){
+        this.name=name;
+    }
+    get marks(){
+     return this.marks
+    }
+    set marks(Marks){
+     this.marks=marks;
+    }
+}
+var std=new student();
+std.setname("Mayank");
+std.setmarks(98);
+document.writeln(std.getname()+""+std.getmarks())
+</script>
