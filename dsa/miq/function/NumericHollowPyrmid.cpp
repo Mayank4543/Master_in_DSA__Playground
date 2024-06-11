@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-// giving two question
+// giving two question of numeric Pyrmid
 int main()
 {
     int n;
