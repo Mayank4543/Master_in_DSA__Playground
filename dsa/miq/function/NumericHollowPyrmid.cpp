@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// giving two question
 int main()
 {
     int n;
