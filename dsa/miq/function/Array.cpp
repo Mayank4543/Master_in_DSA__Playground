@@ -41,21 +41,21 @@ int findMax(int arr[][3], int rows, int col)
 }
 int main()
 {
-    // reverse an array
-    // int arr[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-    // int n = sizeof(arr) / sizeof(int);
-    // int left = 0;
-    // int right = n - 1;
+    //  reverse an array
+    int arr[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+    int n = sizeof(arr) / sizeof(int);
+    int left = 0;
+    int right = n - 1;
 
-    // while (true)
-    // {
-    //     if (left > right)
-    //         break;
-    //     cout << arr[left];
-    //     cout << arr[right];
-    //     left++;
-    //     right--;
-    // }
+    while (true)
+    {
+        if (left > right)
+            break;
+        cout << arr[left];
+        cout << arr[right];
+        left++;
+        right--;
+    }
     // 2D aRRay
 
     int arr1[3][3] = {{10, 2, 3}, {5, 6, 0}, {7, 8, 7}};
