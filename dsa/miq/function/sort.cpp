@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 void sorted(vector<int> &nums)
 {
@@ -83,15 +84,51 @@ void sorted(vector<int> &nums)
         }
     }
 };
+int findDuplicate(vector<int> &nums)
+{
+    // TC =O(NlogN);
+    // std::sort(nums.begin(), nums.end());
+    // for (int i = 0; i < nums.size() - 1; i++)
+    // {
+    //     if (nums[i] == nums[i + 1])
+    //         return nums[i];
+    // }
+    // return -1;
+    // Already Visited If the negative number assign
+    // TC =O(N);
+    int ans = -1;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        int index = abs(nums[i]);
+        if (nums[index] < 0)
+        {
+            ans = index;
+        }
+        else
+        {
+            nums[index] *= -1;
+        }
+    }
+    return ans;
+    // TC =O(N);
+    // SC=O(1);
+    // while (nums[0] != nums[nums[0]])
+    // {
+    //     swap(nums[0], nums[nums[0]]);
+    // }
+    // return nums[0];
+}
 
 int main()
 {
     // vector<int> nums = {0, 1, 0, 2, 1, 0, 2, 0};
     // DutchNational Flag algorithm (2 pointer approach)
-    vector<int> nums = {2, 3, 4, -1, 4, -2, 4, -5, 8, -7};
+    // vector<int> nums = {2, 3, 4, -1, 4, -2, 4, -5, 8, -7};
+    vector<int> nums1 = {3, 3, 1, 2, 5, 4};
     // sorted(nums);
-    sorted(nums);
-    for (int number : nums)
+    // sorted(nums);
+    cout << findDuplicate(nums1) << endl;
+    for (int number : nums1)
     {
         cout << number << " ";
     }
