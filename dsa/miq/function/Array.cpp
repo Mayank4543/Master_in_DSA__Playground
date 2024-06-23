@@ -39,55 +39,70 @@ int findMax(int arr[][3], int rows, int col)
     }
     return maxxi;
 }
+int minimum(vector<int> &nums)
+{
+    int min = nums[0];
+    for (int i = 0; i < nums.size(); i++)
+    {
+        if (nums[i] < min)
+        {
+            min = nums[i];
+        }
+    }
+    return min;
+}
 int main()
 {
     //  reverse an array
-    int arr[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
     int n = sizeof(arr) / sizeof(int);
     int left = 0;
     int right = n - 1;
 
-    while (true)
-    {
-        if (left > right)
-            break;
-        cout << arr[left];
-        cout << arr[right];
-        left++;
-        right--;
-    }
+    // while (true)
+    // {
+    //     if (left > right)
+    //         break;
+    //     cout << arr[left];
+    //     cout << arr[right];
+    //     left++;
+    //     right--;
+    // }
     // 2D aRRay
 
     int arr1[3][3] = {{10, 2, 3}, {5, 6, 0}, {7, 8, 7}};
+    vector<int> mini = {8, 4, 2, 7};
+    cout << "mini" << minimum(mini);
     // by using vector
-    vector<vector<int>> v;
+    vector<vector<int>>
+        v;
     vector<int> a{1, 2, 3};
     vector<int> b{3, 4, 3};
     vector<int> c{5, 6, 7};
     v.push_back(a);
     v.push_back(b);
     v.push_back(c);
-    for (int i = 0; i < v.size(); i++)
-    {
-        for (int j = 0; j < v[0].size(); j++)
-        {
-            cout << v[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // for (int i = 0; i < v.size(); i++)
+    // {
+    //     for (int j = 0; j < v[0].size(); j++)
+    //     {
+    //         cout << v[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
     int arr2[] = {0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0};
-    int n = sizeof(arr2) / sizeof(int);
-    for (int i = 0; i < n; i++)
-    {
-        if (arr2[i] == 1)
-        {
-            cout << arr2[i];
-        }
-        else
-        {
-            cout << arr2[i];
-        }
-    }
+    int n1 = sizeof(arr2) / sizeof(int);
+    // for (int i = 0; i < n1; i++)
+    // {
+    //     if (arr2[i] == 1)
+    //     {
+    //         cout << arr2[i];
+    //     }
+    //     else
+    //     {
+    //         cout << arr2[i];
+    //     }
+    // }
 
     // cout << "Printing row wise :" << endl;
     // for (int i = 0; i < 3; i++)
@@ -114,11 +129,11 @@ int main()
     //     }
     //     cout << sum << endl;
     // }
-    int key = 10;
-    int findelement = findkey(arr1, 3, 3, key);
-    cout << findelement;
-    int findmax = findMax(arr1, 3, 3);
-    cout << "The Minimum value" << findmax;
+    // int key = 10;
+    // int findelement = findkey(arr1, 3, 3, key);
+    // cout << findelement;
+    // int findmax = findMax(arr1, 3, 3);
+    // cout << "The Minimum value" << findmax;
 
     return 0;
 }

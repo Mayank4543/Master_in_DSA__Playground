@@ -1,7 +1,11 @@
-for (int i = 0; i < nums.size(); i++)
+ // for (int i = 0; i < n1; i++)
     // {
-    //     if (nums[i] > 0)
+    //     if (arr2[i] == 1)
     //     {
-    //         cout << i + 1 << " ";
+    //         cout << arr2[i];
+    //     }
+    //     else
+    //     {
+    //         cout << arr2[i];
     //     }
     // }
