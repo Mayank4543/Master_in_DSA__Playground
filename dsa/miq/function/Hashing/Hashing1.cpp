@@ -1,27 +1,46 @@
 #include <iostream>
 using namespace std;
 int main()
+
 {
-    int n;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++)
+    // Number hashing in which max array size is 10^6 if it is exceed it will not work but u can do globally 1e7
+    // int n;
+    // cin >> n;
+    // int arr[n];
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cin >> arr[i];
+    // }
+    // int hash[13] = {0};
+    // for (int i = 0; i < n; i++)
+    // {
+    //     hash[arr[i]] += 1;
+    // }
+    // int q;
+    // cout << "Enter the value of q:";
+    // cin >> q;
+    // while (q--)
+    // {
+    //     int number;
+    //     cin >> number;
+    //     cout << hash[number] << endl;
+    // }
+    // string hashing maximum size it take 256 in which it will include all uppercase and lowercase character
+    string s;
+    cout << "Enter the value of character" << endl;
+    cin >> s;
+    int hash[256] = {0};
+    for (int i = 0; i < s.size(); i++)
     {
-        cin >> arr[i];
+        hash[s[i]]++;
     }
-    int hash[13] = {0};
-    for (int i = 0; i < n; i++)
+    int e;
+    cin >> e;
+    while (e--)
     {
-        hash[arr[i]] += 1;
-    }
-    int q;
-    cout << "Enter the value of q:";
-    cin >> q;
-    while (q--)
-    {
-        int number;
-        cin >> number;
-        cout << hash[number] << endl;
+        char c;
+        cin >> c;
+        cout << hash[c] << endl;
     }
     return 0;
 }
