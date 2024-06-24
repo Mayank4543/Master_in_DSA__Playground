@@ -1,4 +1,6 @@
 #include <iostream>
+#include <bits/stdc++.h>
+
 using namespace std;
 int main()
 
@@ -26,21 +28,34 @@ int main()
     //     cout << hash[number] << endl;
     // }
     // string hashing maximum size it take 256 in which it will include all uppercase and lowercase character
-    string s;
-    cout << "Enter the value of character" << endl;
-    cin >> s;
-    int hash[256] = {0};
-    for (int i = 0; i < s.size(); i++)
+    // string s;
+    // cout << "Enter the value of character" << endl;
+    // cin >> s;
+    // int hash[256] = {0};
+    // for (int i = 0; i < s.size(); i++)
+    // {
+    //     hash[s[i]]++;
+    // }
+    // by using map
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
     {
-        hash[s[i]]++;
+        cin >> arr[i];
+    }
+    map<int, int> mpp;
+    for (int i = 0; i < n; i++)
+    {
+        mpp[arr[i]]++;
     }
     int e;
     cin >> e;
     while (e--)
     {
-        char c;
+        int c;
         cin >> c;
-        cout << hash[c] << endl;
+        cout << mpp[c] << endl;
     }
     return 0;
 }
