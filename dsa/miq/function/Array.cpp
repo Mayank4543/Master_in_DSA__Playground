@@ -1,7 +1,8 @@
-// #include <iostream>
-// #include <vector>
+#include <iostream>
+#include <vector>
+#include <unordered_map>
 
-// using namespace std;
+using namespace std;
 // bool findkey(int arr[][3], int rows, int col, int key)
 // {
 //     for (int i = 0; i < rows; i++)
@@ -163,3 +164,26 @@
 //         return false;
 //     }
 // };
+int findfirstrepeat(int arr[], int n)
+{
+    unordered_map<int, int> hash;
+    for (int i = 0; i < n; i++)
+    {
+        hash[arr[i]]++;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        if (hash[arr[i]] > 1)
+        {
+            return i + 1;
+        }
+    }
+    return -1;
+}
+int main()
+{
+    int arr[] = {1, 5, 3, 4, 3, 5, 6};
+    int n = sizeof(arr) / sizeof(int);
+    cout << findfirstrepeat(arr, n);
+    return 0;
+}
