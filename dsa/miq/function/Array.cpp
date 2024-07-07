@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <unordered_map>
+#include <set>
 
 using namespace std;
 // bool findkey(int arr[][3], int rows, int col, int key)
@@ -164,26 +166,70 @@ using namespace std;
 //         return false;
 //     }
 // };
-int findfirstrepeat(int arr[], int n)
+// int findfirstrepeat(int arr[], int n){
+//     unordered_map<int, int> hash;
+//     for (int i = 0; i < n; i++)
+//     {
+//         hash[arr[i]]++;
+//     }
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (hash[arr[i]] > 1)
+//         {
+//             return i + 1;
+//         }
+//     }
+//     return -1;
+// }
+vector<int> commonsortedelement(int a1[], int a2[], int a3[], int n1, int n2, int n3)
 {
-    unordered_map<int, int> hash;
-    for (int i = 0; i < n; i++)
+    vector<int> ans;
+    set<int> st;
+    int i, j, k;
+    i = j = k = 0;
+    while (i < n1 && j < n2 && k < n3)
     {
-        hash[arr[i]]++;
-    }
-    for (int i = 0; i < n; i++)
-    {
-        if (hash[arr[i]] > 1)
+        if (a1[i] == a2[j] && a2[j] == a3[k])
         {
-            return i + 1;
+            st.insert(a1[i]);
+            i++, j++, k++;
+        }
+        else if (a1[i] < a2[j])
+        {
+            i++;
+        }
+        else if (a2[j] < a3[k])
+        {
+            j++;
+        }
+        else
+        {
+            k++;
         }
     }
-    return -1;
+    for (auto i : st)
+    {
+        ans.push_back(i);
+    }
+    return ans;
 }
 int main()
 {
     int arr[] = {1, 5, 3, 4, 3, 5, 6};
     int n = sizeof(arr) / sizeof(int);
-    cout << findfirstrepeat(arr, n);
+    int arr1[] = {3, 3, 3, 3, 3};
+    int n1 = sizeof(arr1) / sizeof(int);
+    int arr2[] = {3, 3, 3, 3, 3};
+    int n2 = sizeof(arr2) / sizeof(int);
+    int arr3[] = {3, 3, 3, 3, 3};
+    int n3 = sizeof(arr3) / sizeof(int);
+    // cout << findfirstrepeat(arr, n);
+    vector<int> result;
+    result = commonsortedelement(arr1, arr2, arr3, n1, n2, n3);
+    for (int i : result)
+    {
+        cout << i;
+    }
+
     return 0;
 }
