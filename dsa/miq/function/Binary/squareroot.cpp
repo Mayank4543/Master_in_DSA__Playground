@@ -30,6 +30,21 @@ int main()
     int n;
     cout << "Enter the number :";
     cin >> n;
-    cout << squaroot(n);
+    double ans = squaroot(n);
+    int precesion;
+
+    cout << "Enter the floating numbers :";
+    cin >> precesion;
+    double step = 0.1;
+    for (int i = 0; i < precesion; i++)
+    {
+        for (double j = ans; j * j <= n; j = j + step)
+        {
+            ans = j;
+        }
+        step = step / 10;
+    }
+    cout << ans;
     return 0;
 }
+// 3 + 0.1 = 3.1 * 3.1 = 10 3 + 0.2 = 3.2 * 3.2 = 10
